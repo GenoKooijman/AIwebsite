@@ -1,190 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arcade Games</title>
-    <link rel="stylesheet" href="css/home.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
     <div class="background"></div>
     <header>
-        <h1>Welcome to the Arcade!</h1>
-        <button class="menu-button" onclick="toggleSidebar()">Menu</button>
+      <h1>Welcome to the Arcade!</h1>
+      <button class="menu-button" onclick="toggleSidebar()">Menu</button>
     </header>
     <div class="sidebar" id="sidebar">
-        <a href="#" onclick="showHighScores('all')">High Scores</a>
+        <a href="angrybirds/index.html">Game 1</a>
+        <a href="chess.html">Game 2</a>
+        <a href="#game3">Game 3</a>
+        <a href="#game4">Game 4</a>
+        <a href="#game5">Game 5</a>
+        <a href="#game6">Game 6</a>
+        <a href="#game7">Game 7</a>
+        <a href="#game8">Game 8</a>
+        <a href="#">High Scores</a>
         <a href="#">Settings</a>
+      <a href="#" onclick="showHighScores('all')">High Scores</a>
+      <a href="#">Settings</a>
     </div>
     <div class="container" onclick="closeSidebar(event)">
-        <p>Enjoy a variety of small games. Click on a game to start playing!</p>
-        <div class="game" id="game1">
-            <h2>Game 1</h2>
-            <p>Coming soon...</p>
-            <a href="/pacman.html" onclick="incrementPoints('game1')">Play Now</a>
-            <div class="points" id="points-game1">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game1')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game1')">View High Scores</a>
-        </div>
-        <div class="game" id="game2">
-            <h2>Game 2</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game2')">Play Now</a>
-            <div class="points" id="points-game2">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game2')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game2')">View High Scores</a>
-        </div>
-        <div class="game" id="game3">
-            <h2>Game 3</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game3')">Play Now</a>
-            <div class="points" id="points-game3">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game3')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game3')">View High Scores</a>
-        </div>
-        <div class="game" id="game4">
-            <h2>Game 4</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game4')">Play Now</a>
-            <div class="points" id="points-game4">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game4')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game4')">View High Scores</a>
-        </div>
-        <div class="game" id="game5">
-            <h2>Game 5</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game5')">Play Now</a>
-            <div class="points" id="points-game5">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game5')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game5')">View High Scores</a>
-        </div>
-        <div class="game" id="game6">
-            <h2>Game 6</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game6')">Play Now</a>
-            <div class="points" id="points-game6">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game6')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game6')">View High Scores</a>
-        </div>
-        <div class="game" id="game7">
-            <h2>Game 7</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game7')">Play Now</a>
-            <div class="points" id="points-game7">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game7')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game7')">View High Scores</a>
-        </div>
-        <div class="game" id="game8">
-            <h2>Game 8</h2>
-            <p>Coming soon...</p>
-            <a href="#" onclick="incrementPoints('game8')">Play Now</a>
-            <div class="points" id="points-game8">Points: 0</div>
-            <a href="#" class="reset" onclick="resetPoints('game8')">Reset Points</a>
-            <a href="#" class="highscore-button" onclick="showHighScores('game8')">View High Scores</a>
-        </div>
+      <p>Enjoy a variety of small games. Click on a game to start playing!</p>
+      <div class="game" id="game1">
+        <h2>Kont versie van Angry Bird</h2>
+        <p>RELEASE!</p>
+        <a
+          href="/angrybirds/index.html"
+          onclick="incrementPoints('game1')"
+          >Play Now</a
+        >
+        <div class="points" id="points-game1">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game1')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game1')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game2">
+        <h2>Game 2</h2>
+        <p>Coming soon...</p>
+        <a href="chess.html" onclick="incrementPoints('game2')">Play Now</a>
+        <div class="points" id="points-game2">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game2')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game2')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game3">
+        <h2>Game 3</h2>
+        <p>Coming soon...</p>
+        <a href="#" onclick="incrementPoints('game3')">Play Now</a>
+        <div class="points" id="points-game3">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game3')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game3')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game4">
+        <h2>Game 4</h2>
+        <p>Coming soon...</p>
+        <a href="#" onclick="incrementPoints('game4')">Play Now</a>
+        <div class="points" id="points-game4">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game4')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game4')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game5">
+        <h2>Game 5</h2>
+        <p>Coming soon...</p>
+        <a href="#" onclick="incrementPoints('game5')">Play Now</a>
+        <div class="points" id="points-game5">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game5')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game5')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game6">
+        <h2>Game 6</h2>
+        <p>Coming soon...</p>
+        <a href="#" onclick="incrementPoints('game6')">Play Now</a>
+        <div class="points" id="points-game6">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game6')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game6')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game7">
+        <h2>Game 7</h2>
+        <p>Coming soon...</p>
+        <a href="#" onclick="incrementPoints('game7')">Play Now</a>
+        <div class="points" id="points-game7">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game7')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game7')"
+          >View High Scores</a
+        >
+      </div>
+      <div class="game" id="game8">
+        <h2>Game 8</h2>
+        <p>Coming soon...</p>
+        <a href="#" onclick="incrementPoints('game8')">Play Now</a>
+        <div class="points" id="points-game8">Points: 0</div>
+        <a href="#" class="reset" onclick="resetPoints('game8')"
+          >Reset Points</a
+        >
+        <a href="#" class="highscore-button" onclick="showHighScores('game8')"
+          >View High Scores</a
+        >
+      </div>
     </div>
 
     <!-- The Modal -->
     <div id="highscoreModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>High Scores</h2>
-            <ul class="highscore-list" id="highscoreList">
-                <!-- High scores will be dynamically inserted here -->
-            </ul>
-        </div>
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>High Scores</h2>
+        <ul class="highscore-list" id="highscoreList">
+          <!-- High scores will be dynamically inserted here -->
+        </ul>
+      </div>
     </div>
 
     <script>
-        const points = {
-            game1: 0,
-            game2: 0,
-            game3: 0,
-            game4: 0,
-            game5: 0,
-            game6: 0,
-            game7: 0,
-            game8: 0
-        };
+      const points = {
+        game1: 0,
+        game2: 0,
+        game3: 0,
+        game4: 0,
+        game5: 0,
+        game6: 0,
+        game7: 0,
+        game8: 0,
+      };
 
-        const highScores = {
-            game1: ["Player1 - 1000", "Player2 - 900", "Player3 - 800", "Player4 - 700", "Player5 - 600", "Player6 - 500", "Player7 - 400", "Player8 - 300", "Player9 - 200", "Player10 - 100"],
-            game2: ["Player1 - 950", "Player2 - 850", "Player3 - 750", "Player4 - 650", "Player5 - 550", "Player6 - 450", "Player7 - 350", "Player8 - 250", "Player9 - 150", "Player10 - 50"],
-            game3: ["Player1 - 900", "Player2 - 800", "Player3 - 700", "Player4 - 600", "Player5 - 500", "Player6 - 400", "Player7 - 300", "Player8 - 200", "Player9 - 100", "Player10 - 50"],
-            game4: ["Player1 - 850", "Player2 - 750", "Player3 - 650", "Player4 - 550", "Player5 - 450", "Player6 - 350", "Player7 - 250", "Player8 - 150", "Player9 - 100", "Player10 - 50"],
-            game5: ["Player1 - 800", "Player2 - 700", "Player3 - 600", "Player4 - 500", "Player5 - 400", "Player6 - 300", "Player7 - 200", "Player8 - 100", "Player9 - 50", "Player10 - 25"],
-            game6: ["Player1 - 750", "Player2 - 650", "Player3 - 550", "Player4 - 450", "Player5 - 350", "Player6 - 250", "Player7 - 150", "Player8 - 100", "Player9 - 50", "Player10 - 25"],
-            game7: ["Player1 - 700", "Player2 - 600", "Player3 - 500", "Player4 - 400", "Player5 - 300", "Player6 - 200", "Player7 - 100", "Player8 - 50", "Player9 - 25", "Player10 - 10"],
-            game8: ["Player1 - 650", "Player2 - 550", "Player3 - 450", "Player4 - 350", "Player5 - 250", "Player6 - 150", "Player7 - 100", "Player8 - 50", "Player9 - 25", "Player10 - 10"]
-        };
+      const highScores = {
+        game1: [
+          "Player1 - 1000",
+          "Player2 - 900",
+          "Player3 - 800",
+          "Player4 - 700",
+          "Player5 - 600",
+          "Player6 - 500",
+          "Player7 - 400",
+          "Player8 - 300",
+          "Player9 - 200",
+          "Player10 - 100",
+        ],
+        game2: [
+          "Player1 - 950",
+          "Player2 - 850",
+          "Player3 - 750",
+          "Player4 - 650",
+          "Player5 - 550",
+          "Player6 - 450",
+          "Player7 - 350",
+          "Player8 - 250",
+          "Player9 - 150",
+          "Player10 - 50",
+        ],
+        game3: [
+          "Player1 - 900",
+          "Player2 - 800",
+          "Player3 - 700",
+          "Player4 - 600",
+          "Player5 - 500",
+          "Player6 - 400",
+          "Player7 - 300",
+          "Player8 - 200",
+          "Player9 - 100",
+          "Player10 - 50",
+        ],
+        game4: [
+          "Player1 - 850",
+          "Player2 - 750",
+          "Player3 - 650",
+          "Player4 - 550",
+          "Player5 - 450",
+          "Player6 - 350",
+          "Player7 - 250",
+          "Player8 - 150",
+          "Player9 - 100",
+          "Player10 - 50",
+        ],
+        game5: [
+          "Player1 - 800",
+          "Player2 - 700",
+          "Player3 - 600",
+          "Player4 - 500",
+          "Player5 - 400",
+          "Player6 - 300",
+          "Player7 - 200",
+          "Player8 - 100",
+          "Player9 - 50",
+          "Player10 - 25",
+        ],
+        game6: [
+          "Player1 - 750",
+          "Player2 - 650",
+          "Player3 - 550",
+          "Player4 - 450",
+          "Player5 - 350",
+          "Player6 - 250",
+          "Player7 - 150",
+          "Player8 - 100",
+          "Player9 - 50",
+          "Player10 - 25",
+        ],
+        game7: [
+          "Player1 - 700",
+          "Player2 - 600",
+          "Player3 - 500",
+          "Player4 - 400",
+          "Player5 - 300",
+          "Player6 - 200",
+          "Player7 - 100",
+          "Player8 - 50",
+          "Player9 - 25",
+          "Player10 - 10",
+        ],
+        game8: [
+          "Player1 - 650",
+          "Player2 - 550",
+          "Player3 - 450",
+          "Player4 - 350",
+          "Player5 - 250",
+          "Player6 - 150",
+          "Player7 - 100",
+          "Player8 - 50",
+          "Player9 - 25",
+          "Player10 - 10",
+        ],
+      };
 
-        function incrementPoints(game) {
-            points[game]++;
-            document.getElementById(`points-${game}`).innerText = `Points: ${points[game]}`;
+      function incrementPoints(game) {
+        points[game]++;
+        document.getElementById(
+          `points-${game}`
+        ).innerText = `Points: ${points[game]}`;
+      }
+
+      function resetPoints(game) {
+        points[game] = 0;
+        document.getElementById(
+          `points-${game}`
+        ).innerText = `Points: ${points[game]}`;
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+
+      function closeSidebar(event) {
+        const sidebar = document.getElementById("sidebar");
+        if (
+          !sidebar.contains(event.target) &&
+          !document.querySelector(".menu-button").contains(event.target)
+        ) {
+          sidebar.classList.remove("active");
+        }
+      }
+
+      function showHighScores(game) {
+        const modal = document.getElementById("highscoreModal");
+        const highscoreList = document.getElementById("highscoreList");
+        highscoreList.innerHTML = "";
+
+        if (game === "all") {
+          for (let key in highScores) {
+            highscoreList.innerHTML += `<li>${key.toUpperCase()}: ${
+              highScores[key][0]
+            }</li>`;
+          }
+        } else {
+          highScores[game].forEach((score) => {
+            highscoreList.innerHTML += `<li>${score}</li>`;
+          });
         }
 
-        function resetPoints(game) {
-            points[game] = 0;
-            document.getElementById(`points-${game}`).innerText = `Points: ${points[game]}`;
-        }
+        modal.style.display = "flex";
+      }
 
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('active');
-        }
+      function closeModal() {
+        const modal = document.getElementById("highscoreModal");
+        modal.style.display = "none";
+      }
 
-        function closeSidebar(event) {
-            const sidebar = document.getElementById('sidebar');
-            if (!sidebar.contains(event.target) && !document.querySelector('.menu-button').contains(event.target)) {
-                sidebar.classList.remove('active');
-            }
-        }
-
-        function showHighScores(game) {
-            const modal = document.getElementById('highscoreModal');
-            const highscoreList = document.getElementById('highscoreList');
-            highscoreList.innerHTML = '';
-
-            if (game === 'all') {
-                for (let key in highScores) {
-                    highscoreList.innerHTML += `<li>${key.toUpperCase()}: ${highScores[key][0]}</li>`;
-                }
-            } else {
-                highScores[game].forEach(score => {
-                    highscoreList.innerHTML += `<li>${score}</li>`;
-                });
-            }
-
-            modal.style.display = 'flex';
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('highscoreModal');
-            modal.style.display = 'none';
-        }
-
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                }
-            });
+      // Intersection Observer for scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          } else {
+            entry.target.classList.remove("visible");
+          }
         });
+      });
 
-        document.querySelectorAll('.game').forEach(game => {
-            observer.observe(game);
-        });
+      document.querySelectorAll(".game").forEach((game) => {
+        observer.observe(game);
+      });
 
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('highscoreModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
+      // Close modal when clicking outside of it
+      window.onclick = function (event) {
+        const modal = document.getElementById("highscoreModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
         }
+      };
     </script>
-</body>
+  </body>
 </html>
