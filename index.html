@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header {
+            background-color: rgba(255, 0, 102, 0.8);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .menu-button {
+            background-color: #ff0066;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .menu-button:hover {
+            background-color: #ff3399;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            transform: translateX(-220px);
+            transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            background-color: #ff0066;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #ff3399;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            margin-left: 220px;
+            margin-top: 80px;
+            flex-grow: 1;
+        }
+        .game {
+            background-color: rgba(26, 26, 26, 0.8);
+            border: 2px solid #ff0066;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s, background-color 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .game.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .game:hover {
+            transform: scale(1.05);
+            background-color: rgba(26, 26, 26, 1);
+        }
+        .game h2 {
+            margin-top: 0;
+            color: #ffcc00;
+        }
+        .game p {
+            color: #ccc;
+        }
+        .game a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #ff0066;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .game a:hover {
+            background-color: #ff3399;
+        }
+        .points {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #ffcc00;
+        }
+        .reset {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #ff0066;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .reset:hover {
+            background-color: #ff3399;
+        }
+        /* Custom scrollbar */
+        .sidebar::-webkit-scrollbar {
+            width: 10px;
+        }
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #ff0066;
+            border-radius: 5px;
+        }
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #ff3399;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Arcade!</h1>
+        <button class="menu-button" onclick="toggleSidebar()">Menu</button>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <a href="#game1">Game 1</a>
+        <a href="#game2">Game 2</a>
+        <a href="#game3">Game 3</a>
+        <a href="#game4">Game 4</a>
+        <a href="#game5">Game 5</a>
+        <a href="#game6">Game 6</a>
+        <a href="#game7">Game 7</a>
+        <a href="#game8">Game 8</a>
+        <a href="#">High Scores</a>
+        <a href="#">Settings</a>
+    </div>
+    <div class="container">
+        <p>Enjoy a variety of small games. Click on a game to start playing!</p>
+        <div class="game" id="game1">
+            <h2>Game 1</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game1')">Play Now</a>
+            <div class="points" id="points-game1">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game1')">Reset Points</a>
+        </div>
+        <div class="game" id="game2">
+            <h2>Game 2</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game2')">Play Now</a>
+            <div class="points" id="points-game2">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game2')">Reset Points</a>
+        </div>
+        <div class="game" id="game3">
+            <h2>Game 3</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game3')">Play Now</a>
+            <div class="points" id="points-game3">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game3')">Reset Points</a>
+        </div>
+        <div class="game" id="game4">
+            <h2>Game 4</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game4')">Play Now</a>
+            <div class="points" id="points-game4">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game4')">Reset Points</a>
+        </div>
+        <div class="game" id="game5">
+            <h2>Game 5</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game5')">Play Now</a>
+            <div class="points" id="points-game5">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game5')">Reset Points</a>
+        </div>
+        <div class="game" id="game6">
+            <h2>Game 6</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game6')">Play Now</a>
+            <div class="points" id="points-game6">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game6')">Reset Points</a>
+        </div>
+        <div class="game" id="game7">
+            <h2>Game 7</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game7')">Play Now</a>
+            <div class="points" id="points-game7">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game7')">Reset Points</a>
+        </div>
+        <div class="game" id="game8">
+            <h2>Game 8</h2>
+            <p>Coming soon...</p>
+            <a href="#" onclick="incrementPoints('game8')">Play Now</a>
+            <div class="points" id="points-game8">Points: 0</div>
+            <a href="#" class="reset" onclick="resetPoints('game8')">Reset Points</a>
+        </div>
+    </div>
+    <script>
+        const points = {
+            game1: 0,
+            game2: 0,
+            game3: 0,
+            game4: 0,
+            game5: 0,
+            game6: 0,
+            game7: 0,
+            game8: 0
+        };
+
+        function incrementPoints(game) {
+            points[game]++;
+            document.getElementById(`points-${game}`).innerText = `Points: ${points[game]}`;
+        }
+
+        function resetPoints(game) {
+            points[game] = 0;
+            document.getElementById(`points-${game}`).innerText = `Points: ${points[game]}`;
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.game').forEach(game => {
+            observer.observe(game);
+        });
+    </script>
+</body>
+</html>
