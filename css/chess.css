@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #000000;
+    margin: 0;
+    padding-top: 10vw; /* Adjust this value to avoid overlap with the header */
+    font-family: 'Press Start 2P', cursive;
+}
+
+#chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 50px); /* Adjusted size */
+    grid-template-rows: repeat(8, 50px); /* Adjusted size */
+    gap: 0;
+    border: 2px solid #ff0066;
+    box-shadow: 0 0 5px #ff0066, 0 0 10px #ff0066;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.square {
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem; /* Adjusted size */
+    cursor: pointer;
+    color: #000; /* Default piece color */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.square.light {
+    background-color: #00ff00;
+    box-shadow: 0 0 3px #00ff00, 0 0 6px #00ff00;
+}
+
+.square.dark {
+    background-color: #0000ff;
+    box-shadow: 0 0 3px #0000ff, 0 0 6px #0000ff;
+}
+
+.square.selected {
+    background-color: #a472eb;
+    transform: scale(1.1);
+    box-shadow: 0 0 3px #a472eb, 0 0 6px #a472eb;
+}
+
+.square .white-piece {
+    color: #fff; /* White pieces color */
+}
+
+.square .black-piece {
+    color: #000; /* Black pieces color */
+}
+
+.square.highlight {
+    background-color: #ff00ff; /* Vibrant highlight color */
+    animation: pulse 1s infinite; /* Arcade-style animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #ff00ff, 0 0 2px #ff00ff;
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 7px #ff00ff, 0 0 5px #ff00ff;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px #ff00ff, 0 0 2px #ff00ff;
+    }
+}
+
