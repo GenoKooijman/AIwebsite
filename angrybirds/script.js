@@ -132,6 +132,9 @@ function createBlock(x, y, width, height) {
   });
 }
 
+// Array to hold target bodies
+let targets = [];
+
 // Function to generate multiple structures and targets
 function generateStructuresWithTargets() {
   const structureCount = 3; // Number of structures to create
@@ -158,10 +161,68 @@ function generateStructuresWithTargets() {
           render: { fillStyle: "red" },
         });
         World.add(world, target);
+        targets.push(target); // Add target to the targets array
       }
     }
   }
 }
+
+// Function to reset the level by generating new structures and targets
+function resetLevel() {
+  targets.forEach((target) => {
+    if (target) {
+      World.remove(world, target); // Remove target from the world
+    }
+  });
+  targets = []; // Clear the targets array
+
+  World.remove(world, bird); // Remove the bird from the world
+  resetBird(); // Reset the bird
+  generateStructuresWithTargets(); // Generate new structures and targets
+}
+
+// Event listener to check for collisions
+Events.on(engine, "collisionStart", function (event) {
+  event.pairs.forEach((collision) => {
+    const { bodyA, bodyB } = collision;
+
+    // Check if the bird collides with a target
+    if (bodyA === bird || bodyB === bird) {
+      const target = bodyA === bird ? bodyB : bodyA; // Identify the target hit
+      if (targets.includes(target)) {
+        World.remove(world, target); // Remove the target from the world
+        targets = targets.filter((t) => t !== target); // Remove it from the targets array
+
+        // Check if there are no more targets
+        if (targets.length === 0) {
+          resetLevel(); // Reset the level if all targets are eliminated
+        }
+      }
+    }
+  });
+});
+
+// Additional listener to check if targets hit the ground
+Events.on(engine, "afterUpdate", function () {
+  targets.forEach((target) => {
+    // Check if target is below the ground level
+    if (target.position.y > canvas.height - 20) {
+      World.remove(world, target); // Remove the target from the world
+      targets = targets.filter((t) => t !== target); // Remove it from the targets array
+    }
+  });
+
+  // Check if bird is below the ground level
+  if (bird.position.y > canvas.height - 20) {
+    World.remove(world, bird); // Remove the bird from the world
+    resetBird(); // Reset the bird if it hits the ground
+  }
+
+  // If no targets remain, reset the level
+  if (targets.length === 0) {
+    resetLevel(); // Reset the level if all targets are eliminated
+  }
+});
 
 // Generate the structures and their targets
 generateStructuresWithTargets();
